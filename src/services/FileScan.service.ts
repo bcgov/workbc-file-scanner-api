@@ -3,10 +3,11 @@ import NodeClam from "clamscan";
 // Scan //
 export const scan = async (stream: any) => {
     let infected: boolean | undefined;
+
     const ClamScan = new NodeClam().init({
         clamdscan: {
-            host: '127.0.0.1',
-            port: 3311,
+            host: process.env.CLAMSCAN_HOST,
+            port: Number(process.env.CLAMSCAN_PORT)
         }
     });
 
@@ -20,11 +21,11 @@ export const scan = async (stream: any) => {
             else {
                 infected = false;
             }
-        } catch (err) {
+        } catch (err: any) {
             console.log(err);
             throw new Error(err);
         }
-    }).catch(err => { // Initialization errors
+    }).catch((err: any) => { // Initialization errors
         console.log(err);
         throw new Error(err);
     });
