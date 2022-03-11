@@ -16,6 +16,7 @@ export const scan = async (stream: any) => {
         try {
             const { isInfected } = await clamscan.scanStream(stream);
             if (isInfected) {
+                console.log("VIRUS DETECTED!");
                 infected = true;
             }
             else {

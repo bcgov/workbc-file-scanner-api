@@ -17,4 +17,4 @@ export const scan = async (req: any, res: express.Response) => {
       console.log(e);
       return res.status(500).send("Internal Server Error");
     }
-  };
+};
