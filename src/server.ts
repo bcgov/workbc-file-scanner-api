@@ -6,10 +6,9 @@ var helmet = require('helmet');
 var csrf = require('csurf')
 var bodyParser = require('body-parser')
 var cors = require('cors')
-const formidable = require('express-formidable');
 const fileUpload = require('express-fileupload');
 
-var origin = process.env.ORIGIN_URL || process.env.OPENSHIFT_NODEJS_ORIGIN_URL || "http://localhost:3000"
+var origin = process.env.ORIGIN_URL || process.env.OPENSHIFT_NODEJS_ORIGIN_URL || "https://localhost:8000"
 
 const corsOptions = {
     origin: origin,
@@ -23,8 +22,6 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(helmet());
 app.use(fileUpload());
