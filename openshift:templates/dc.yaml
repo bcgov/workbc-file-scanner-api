@@ -118,4 +118,4 @@ parameters:
   displayName: Route Host
   name: ROUTE_HOST
   required: true
-  value: workbc-file-scanner-test.es.workbc.ca
+  value: m-file-scanner-test.es.workbc.ca
