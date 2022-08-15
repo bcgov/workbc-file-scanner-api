@@ -1,7 +1,8 @@
-import * as express from "express";
-import * as fileScanController from "../controllers/FileScan.controller";
-export const router = express.Router();
+import * as express from "express"
+import fileScanController from "../controllers/FileScan.controller"
 
-router.post("/", fileScanController.scan);
+const router = express.Router()
 
-module.exports = router;
+router.post("/", fileScanController)
+
+export default router
