@@ -7,6 +7,7 @@ const { Readable } = require("stream");
 export const scan = async (req: express.Request, res: express.Response) => {
   console.log("POST request received to " + req.get("host") + req.originalUrl);
   let f = req.files?.fileToScan as UploadedFile;
+  console.log("REQ: ", req);
   console.log("FILES: ", req.files);
   if (f == null || f == undefined)
     return await res
